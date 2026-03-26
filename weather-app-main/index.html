@@ -8,59 +8,174 @@
   
   <title>Frontend Mentor | Weather app</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
 <body>
 
-  Units
+  <div class="app">
 
-  Switch to Imperial/Metric
-
-  Temperature
-
-  Celsius (°C)
-  Fahrenheit (°F)
-
-  Wind Speed
-
-  km/h
-  mph
-
-  Precipitation
-
-  Millimeters (mm)
-  Inches (in)
-
-  How's the sky looking today?
-
-  Search for a city, e.g., New York
-  Search
-
-  Feels like
-  <!-- Insert temperature here -->
-
-  Humidity
-  <!-- Insert humidity here -->
-
-  Wind
-  <!-- Insert wind here -->   
-  
-  Precipitation
-  <!-- Insert precipitation here -->
-
-  Daily forecast
-  <!-- Insert daily forecast for the next 7 days here -->
-
-  Hourly forecast
-  <!-- Insert hourly forecast for the selected day here -->
-
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+<header>
+  <div class="logo">
+    <img src="./assets/images/logo.svg" alt="logo">
+    <p>Weather Now</p>
   </div>
+<!-- <label for="select">Units</label> -->
+  <div class="units">
+  <label for="select">Units</label>
+  <select id="select">
+    <option value="">Switch to Imperial/Metric</option>
+    <option value="">Temperature</option>
+    <option value="">Celsius (°C)</option>
+    <option value="">Fahrenheit (°F)</option>
+    <option value=""> Wind Speed   km/h
+    mph</option>
+    <option value="">Precipitation</option>
+    <option value="">Millimeters (mm)</option>
+     <option value="">  Inches (in)</option>
+  </select>
+</div>
+  </header>
+
+<section class="search">
+  <h1>How's the sky looking today?</h1>
+<label class="label">
+  <img src="./assets/images/icon-search.svg" alt="search">
+ 
+  <input type="text" placeholder="Search for a city, e.g., New York">
+</label>
+<button>Search</button>
+</section>
+
+<div class="content">
+  <div class="left">
+    <div class="main-card">
+      <div class="weather-info">
+        <h2>Berlin, Germany</h2>
+        <p>Tuesday, Aug 5</p>
+      </div>
+    <div class="temperature">
+        <span>20°</span>
+      </div>
+  
+      </div>
+
+      <div class="stat-card">
+            <div class="stat">
+              <p>Feels like</p>
+              <span>18°</span>
+            </div>
+             <div class="stat">
+               <p>Humidity</p>
+              <span>46%</span>
+             </div>
+              <div class="stat">
+                <p>Wind</p>
+              <span>14km/h</span>
+              </div>
+               <div class="stat">
+                 <p>Precipitation</p>
+               <span>0mm</span>
+               </div>
+        </div>
+               <section class="daily">
+              <h3>Daily forecast</h3>
+  
+              <ul class="daily-card">
+                <li>
+                  <p>Tue</p>
+                  <img src="./assets/images/icon-rain.webp" alt="tue" width="30px" height="30px">
+                  <span>20°</span>
+                  <span>14°</span>
+                </li>
+                <li>
+                   <p>Wed</p>
+                  <img src="./assets/images/icon-drizzle.webp" alt="tue" width="30px" height="30px">
+                  <span>21°</span>
+                  <span>15°</span>
+                </li>
+                <li>
+                   <p>Thu</p>
+                  <img src="./assets/images/icon-sunny.webp" alt="tue" width="30px" height="30px">
+                  <span>24°</span>
+                  <span>14°</span>
+                </li>
+                <li>
+                   <p>Fri</p>
+                  <img src="./assets/images/icon-partly-cloudy.webp" alt="tue" width="30px" height="30px">
+                  <span>25°</span>
+                  <span>13°</span>
+                </li>
+                <li>
+                  <p>Sat</p>
+                  <img src="./assets/images/icon-storm.webp" alt="tue" width="30px" height="30px">
+                  <span>21°</span>
+                  <span>15°</span>
+                </li>
+                <li>
+                  <p>Sun</p>
+                  <img src="./assets/images/icon-snow.webp" alt="tue" width="30px" height="30px">
+                  <span>25°</span>
+                  <span>16°</span>
+                </li>
+                <li>
+                  <p>Mon</p>
+                  <img src="./assets/images/icon-fog.webp" alt="tue" width="30px" height="30px">
+                  <span>24°</span>
+                  <span>15°</span>
+                </li>
+              </ul>
+              <!-- Insert daily forecast for the next 7 days here -->
+            </section>
+  </div>
+  
+  
+    <div class="right">
+      <h3>Hourly forecast</h3>
+      <ul class="hourly">
+        <li>
+          <img src="./assets/images/icon-overcast.webp" alt="tue" width="20px" height="20px">
+          <span>3 PM</span>
+          <span>20°</span>
+        </li>
+         <li>
+          <img src="./assets/images/icon-partly-cloudy.webp" alt="tue" width="20px" height="20px">
+          <span>4 PM</span>
+          <span>20°</span>
+        </li>
+        <li>
+          <img src="./assets/images/icon-sunny.webp" alt="tue" width="20px" height="20px">
+          <span>5 PM</span>
+          <span>20°</span>
+        </li>
+         <li>
+          <img src="./assets/images/icon-overcast.webp" alt="tue" width="20px" height="20px">
+          <span>6 PM</span>
+          <span>19°</span>
+        </li>
+         <li>
+          <img src="./assets/images/icon-snow.webp" alt="tue" width="20px" height="20px">
+          <span>7 PM</span>
+          <span>18°</span>
+        </li>
+         <li>
+          <img src="./assets/images/icon-fog.webp" alt="tue" width="20px" height="20px">
+          <span>8 PM</span>
+          <span>18°</span>
+        </li>
+         <li>
+          <img src="./assets/images/icon-snow.webp" alt="tue" width="20px" height="20px">
+          <span>9 PM</span>
+          <span>17°</span>
+        </li>
+          <li>
+          <img src="./assets/images/icon-overcast.webp" alt="tue" width="20px" height="20px">
+          <span>10 PM</span>
+          <span>17°</span>
+        </li>
+      </ul>
+        </div>
+</div>
+</div>
+    <!-- Insert hourly forecast for the selected day here -->
+</div>
 </body>
 </html>
