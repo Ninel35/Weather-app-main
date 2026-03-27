@@ -1,0 +1,113 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: white;
+    background-color:rgb(178, 178, 202);
+}
+
+ul{
+    list-style-type: none;
+}
+span{
+    color: white;
+    font-size: 40px;
+}
+.app{
+    width: 1100px;
+}
+
+@media screen and (min-width: 768px){
+.content{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+}
+}
+
+.stat-card{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+@media screen and (min-width: 768px){
+.stat-card{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+}
+
+@media screen and (min-width: 768px){
+    .daily-card{
+    display: flex;
+    gap: 10px;
+}
+}
+
+.daily-card{
+    display: grid;
+     grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+@media screen and (min-width: 768px){
+    .daily-card{
+    display: flex;
+    gap: 10px;
+}
+}
+
+.main-card{
+    background-image: url(./assets/images/bg-today-small.svg);
+    padding: 15px;
+    border-radius: 20px;
+    /* margin: 30px; */
+}
+@media screen and (min-width: 768px){
+.main-card{
+    background-image: url(./assets/images/bg-today-large.svg);
+    padding: 30px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    margin: 25px;
+}
+}
+
+.temperature-mobile{
+    display: flex;
+justify-content: center;
+align-items: center;
+}
+
+@media screen and (min-width: 768px){
+.temperature-mobile{
+display: none;
+}
+}
+
+@media screen and (min-width: 768px){
+.temperature{
+display: flex;
+justify-content: center;
+align-items: center;
+}
+}
+
+
+
+@media screen and (max-width: 765px){
+    .temperature{
+display: none;
+}
+}
+.logo{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+p{
+    margin: 0;
+}
