@@ -1,170 +1,291 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  <title>Weather app</title>
-  <link rel="stylesheet" href="./style.css">
-</head>
-<body>
-  <div class="app">
-  <header>
-  <div class="logo">
-  <img src="./assets/images/logo.svg" alt="logo" width="95px" height="95px">
-  </div>
-<!-- <label for="select">Units</label> -->
-  <div class="units">
-  <label for="select">Units</label>
-  <select id="select">
-    <option value="">Switch to Imperial/Metric</option>
-    <option value="">Temperature</option>
-    <option value="">Celsius (°C)</option>
-    <option value="">Fahrenheit (°F)</option>
-    <option value=""> Wind Speed km/h mph</option>
-    <option value="">Precipitation</option>
-    <option value="">Millimeters (mm)</option>
-     <option value="">Inches (in)</option>
-  </select>
-  </div>
-  </header>
-  <section class="search">
-  <h1>How's the sky looking today?</h1>
-<label class="label">
-  <img src="./assets/images/icon-search.svg" alt="search">
-  <input type="text" placeholder="Search for place...">
-</label>
-<button>Search</button>
-</section>
-<div class="content">
-  <div class="left">
-    <div class="main-card">
-      <div class="weather-info">
-        <h2>Berlin, Germany</h2>
-        <p>Tuesday, Aug 5</p>
-      </div>
-      <div class="temperature-mobile">
-      <img src="./assets/images/icon-sunny.webp" alt="tue" width="80px" height="80px">
-        <span>68°</span>
-      </div>
-    <div class="temperature">
-      <img src="./assets/images/icon-sunny.webp" alt="tue" width="45px" height="45px">
-        <span>20°</span>
-      </div>
-      </div>
-    <div class="stat-card">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <title>Weather app</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header>
+        <div class="logo">
+          <img
+            src="./assets/images/logo.svg"
+            alt="logo"
+            width="90px"
+            height=""
+          />
+        </div>
+        <!-- <label for="select">Units</label> -->
+        <div class="units">
+          <img
+            class="icon-units"
+            src="./assets/images/icon-units.svg"
+            alt="logo"
+            width="15px"
+            height="15px"
+          />
+          <label for="select"></label>
+          <select id="select">
+            <option value="">Units</option>
+            <option value="">Temperature</option>
+            <option value="">Celsius (°C)</option>
+            <option value="">Fahrenheit (°F)</option>
+            <option value="">Wind Speed km/h mph</option>
+            <option value="">Precipitation</option>
+            <option value="">Millimeters (mm)</option>
+            <option value="">Inches (in)</option>
+          </select>
+        </div>
+      </header>
+      <section class="search-section">
+        <h1>How's the sky looking today?</h1>
+        <div class="search-field">
+          <label class="label">
+            <img
+              class="icon-search"
+              src="./assets/images/icon-search.svg"
+              width="15"
+              alt="search"
+            />
+            <input type="text" placeholder="Search for place..." />
+          </label>
+          <button>Search</button>
+        </div>
+      </section>
+      <div class="content">
+        <div class="left">
+          <div class="main-card">
+            <div class="weather-info">
+              <h2>Berlin, Germany</h2>
+              <p>Tuesday, Aug 5</p>
+            </div>
+            <div class="temperature-mobile">
+              <img
+                src="./assets/images/icon-sunny.webp"
+                alt="tue"
+                width="80px"
+                height="80px"
+              />
+              <span>68°</span>
+            </div>
+            <div class="temperature">
+              <img
+                src="./assets/images/icon-sunny.webp"
+                alt="tue"
+                width="80px"
+                height="80px"
+              />
+              <span>20°</span>
+            </div>
+          </div>
+          <div class="stat-card">
             <div class="stat">
               <p>Feels like</p>
               <span>18°</span>
             </div>
-             <div class="stat">
-               <p>Humidity</p>
+            <div class="stat">
+              <p>Humidity</p>
               <span>46%</span>
-             </div>
-              <div class="stat">
-                <p>Wind</p>
+            </div>
+            <div class="stat">
+              <p>Wind</p>
               <span>14km/h</span>
-              </div>
-               <div class="stat">
-                 <p>Precipitation</p>
-               <span>0mm</span>
-               </div>
+            </div>
+            <div class="stat">
+              <p>Precipitation</p>
+              <span>0mm</span>
+            </div>
+          </div>
+          <section class="daily">
+            <h3>Daily forecast</h3>
+            <ul class="daily-card">
+              <li class="dayly-days">
+                <p class="text-daily">Tue</p>
+                <img
+                  class="picture-daily"
+                  src="./assets/images/icon-rain.webp"
+                  alt="tue"
+                  width="40px"
+                  height="40px"
+                />
+                <span class="text-daily">20°</span>
+                <span class="text-daily">14°</span>
+              </li>
+              <li class="dayly-days">
+                <p>Wed</p>
+                <img
+                  src="./assets/images/icon-drizzle.webp"
+                  alt="tue"
+                  width="30px"
+                  height="30px"
+                />
+                <span>21°</span>
+                <span>15°</span>
+              </li>
+              <li class="dayly-days">
+                <p>Thu</p>
+                <img
+                  src="./assets/images/icon-sunny.webp"
+                  alt="tue"
+                  width="30px"
+                  height="30px"
+                />
+                <span>24°</span>
+                <span>14°</span>
+              </li>
+              <li class="dayly-days">
+                <p>Fri</p>
+                <img
+                  src="./assets/images/icon-partly-cloudy.webp"
+                  alt="tue"
+                  width="30px"
+                  height="30px"
+                />
+                <span>25°</span>
+                <span>13°</span>
+              </li>
+              <li class="dayly-days">
+                <p>Sat</p>
+                <img
+                  src="./assets/images/icon-storm.webp"
+                  alt="tue"
+                  width="30px"
+                  height="30px"
+                />
+                <span>21°</span>
+                <span>15°</span>
+              </li>
+              <li class="dayly-days">
+                <p>Sun</p>
+                <img
+                  src="./assets/images/icon-snow.webp"
+                  alt="tue"
+                  width="30px"
+                  height="30px"
+                />
+                <span>25°</span>
+                <span>16°</span>
+              </li>
+              <li class="dayly-days">
+                <p>Mon</p>
+                <img
+                  src="./assets/images/icon-fog.webp"
+                  alt="tue"
+                  width="30px"
+                  height="30px"
+                />
+                <span>24°</span>
+                <span>15°</span>
+              </li>
+            </ul>
+          </section>
         </div>
-               <section class="daily">
-              <h3>Daily forecast</h3>
-              <ul class="daily-card">
-                <li class="dayly-days">
-                  <p>Tue</p>
-                  <img src="./assets/images/icon-rain.webp" alt="tue" width="30px" height="30px">
-                  <span>20°</span>
-                  <span>14°</span>
-                </li>
-                <li class="dayly-days">
-                   <p>Wed</p>
-                  <img src="./assets/images/icon-drizzle.webp" alt="tue" width="30px" height="30px">
-                  <span>21°</span>
-                  <span>15°</span>
-                </li>
-                <li class="dayly-days">
-                   <p>Thu</p>
-                  <img src="./assets/images/icon-sunny.webp" alt="tue" width="30px" height="30px">
-                  <span>24°</span>
-                  <span>14°</span>
-                </li>
-                <li class="dayly-days">
-                   <p>Fri</p>
-                  <img src="./assets/images/icon-partly-cloudy.webp" alt="tue" width="30px" height="30px">
-                  <span>25°</span>
-                  <span>13°</span>
-                </li>
-                <li class="dayly-days">
-                  <p>Sat</p>
-                  <img src="./assets/images/icon-storm.webp" alt="tue" width="30px" height="30px">
-                  <span>21°</span>
-                  <span>15°</span>
-                </li>
-                <li class="dayly-days">
-                  <p>Sun</p>
-                  <img src="./assets/images/icon-snow.webp" alt="tue" width="30px" height="30px">
-                  <span>25°</span>
-                  <span>16°</span>
-                </li>
-                <li class="dayly-days">
-                  <p>Mon</p>
-                  <img src="./assets/images/icon-fog.webp" alt="tue" width="30px" height="30px">
-                  <span>24°</span>
-                  <span>15°</span>
-                </li>
-              </ul>
-            </section>
-  </div>
-  <div class="right">
-      <h3>Hourly forecast</h3>
-      <ul class="hourly">
-        <li class="card-hourly">
-          <img src="./assets/images/icon-overcast.webp" alt="tue" width="20px" height="20px">
-          <span>3 PM</span>
-          <span>20°</span>
-        </li>
-         <li class="card-hourly">
-          <img src="./assets/images/icon-partly-cloudy.webp" alt="tue" width="20px" height="20px">
-          <span>4 PM</span>
-          <span>20°</span>
-        </li>
-        <li class="card-hourly">
-          <img src="./assets/images/icon-sunny.webp" alt="tue" width="20px" height="20px">
-          <span>5 PM</span>
-          <span>20°</span>
-        </li>
-         <li class="card-hourly">
-          <img src="./assets/images/icon-overcast.webp" alt="tue" width="20px" height="20px">
-          <span>6 PM</span>
-          <span>19°</span>
-        </li>
-         <li class="card-hourly">
-          <img src="./assets/images/icon-snow.webp" alt="tue" width="20px" height="20px">
-          <span>7 PM</span>
-          <span>18°</span>
-        </li>
-         <li class="card-hourly">
-          <img src="./assets/images/icon-fog.webp" alt="tue" width="20px" height="20px">
-          <span>8 PM</span>
-          <span>18°</span>
-        </li>
-         <li class="card-hourly">
-          <img src="./assets/images/icon-snow.webp" alt="tue" width="20px" height="20px">
-          <span>9 PM</span>
-          <span>17°</span>
-        </li>
-          <li class="card-hourly">
-          <img src="./assets/images/icon-snow.webp" alt="tue" width="20px" height="20px">
-          <span>10 PM</span>
-          <span>17°</span>
-        </li>
-      </ul>
+        <div class="right">
+          <h3>Hourly forecast</h3>
+
+          <select id="select">
+            <option value="">Monday</option>
+            <option value="">Tuesday</option>
+            <option value="">Wednesday</option>
+            <option value="">Thursday</option>
+            <option value="">Friday</option>
+            <option value="">Suturday</option>
+            <option value="">Sunday</option>
+          </select>
+          <ul class="hourly">
+            <li class="card-hourly">
+              <img
+                src="./assets/images/icon-overcast.webp"
+                alt="tue"
+                width="20px"
+                height="20px"
+              />
+              <span>3 PM</span>
+              <span>20°</span>
+            </li>
+            <li class="card-hourly">
+              <img
+                src="./assets/images/icon-partly-cloudy.webp"
+                alt="tue"
+                width="20px"
+                height="20px"
+              />
+              <span>4 PM</span>
+              <span>20°</span>
+            </li>
+            <li class="card-hourly">
+              <img
+                src="./assets/images/icon-sunny.webp"
+                alt="tue"
+                width="20px"
+                height="20px"
+              />
+              <span>5 PM</span>
+              <span>20°</span>
+            </li>
+            <li class="card-hourly">
+              <img
+                src="./assets/images/icon-overcast.webp"
+                alt="tue"
+                width="20px"
+                height="20px"
+              />
+              <span>6 PM</span>
+              <span>19°</span>
+            </li>
+            <li class="card-hourly">
+              <img
+                src="./assets/images/icon-snow.webp"
+                alt="tue"
+                width="20px"
+                height="20px"
+              />
+              <span>7 PM</span>
+              <span>18°</span>
+            </li>
+            <li class="card-hourly">
+              <img
+                src="./assets/images/icon-fog.webp"
+                alt="tue"
+                width="20px"
+                height="20px"
+              />
+              <span>8 PM</span>
+              <span>18°</span>
+            </li>
+            <li class="card-hourly">
+              <img
+                src="./assets/images/icon-snow.webp"
+                alt="tue"
+                width="20px"
+                height="20px"
+              />
+              <span>9 PM</span>
+              <span>17°</span>
+            </li>
+            <li class="card-hourly">
+              <img
+                src="./assets/images/icon-snow.webp"
+                alt="tue"
+                width="20px"
+                height="20px"
+              />
+              <span>10 PM</span>
+              <span>17°</span>
+            </li>
+          </ul>
         </div>
-</div>
-</div>
+      </div>
+    </div>
     <!-- Insert hourly forecast for the selected day here -->
-</body>
+  </body>
 </html>
