@@ -46,9 +46,10 @@
           </select>
         </div>
       </header>
-      <section class="search-section">
-        <h1>How's the sky looking today?</h1>
-        <div class="search-field">
+
+      <h1 class="text-header">How's the sky looking today?</h1>
+      <div class="search-field">
+        <form class="search-form">
           <label class="label">
             <img
               class="icon-search"
@@ -56,138 +57,21 @@
               width="15"
               alt="search"
             />
-            <input type="text" placeholder="Search for place..." />
+            <input
+              class="search-input"
+              type="text"
+              placeholder="Search for place..."
+            />
           </label>
-          <button>Search</button>
-        </div>
-      </section>
+          <button type="submit">Search</button>
+        </form>
+      </div>
+
       <div class="content">
         <div class="left">
-          <div class="main-card">
-            <div class="weather-info">
-              <h2>Berlin, Germany</h2>
-              <p>Tuesday, Aug 5</p>
-            </div>
-            <div class="temperature-mobile">
-              <img
-                src="./assets/images/icon-sunny.webp"
-                alt="tue"
-                width="80px"
-                height="80px"
-              />
-              <span>68°</span>
-            </div>
-            <div class="temperature">
-              <img
-                src="./assets/images/icon-sunny.webp"
-                alt="tue"
-                width="80px"
-                height="80px"
-              />
-              <span>20°</span>
-            </div>
-          </div>
-          <div class="stat-card">
-            <div class="stat">
-              <p>Feels like</p>
-              <span>18°</span>
-            </div>
-            <div class="stat">
-              <p>Humidity</p>
-              <span>46%</span>
-            </div>
-            <div class="stat">
-              <p>Wind</p>
-              <span>14km/h</span>
-            </div>
-            <div class="stat">
-              <p>Precipitation</p>
-              <span>0mm</span>
-            </div>
-          </div>
-          <section class="daily">
-            <h3>Daily forecast</h3>
-            <ul class="daily-card">
-              <li class="dayly-days">
-                <p class="text-daily">Tue</p>
-                <img
-                  class="picture-daily"
-                  src="./assets/images/icon-rain.webp"
-                  alt="tue"
-                  width="40px"
-                  height="40px"
-                />
-                <span class="text-daily">20°</span>
-                <span class="text-daily">14°</span>
-              </li>
-              <li class="dayly-days">
-                <p>Wed</p>
-                <img
-                  src="./assets/images/icon-drizzle.webp"
-                  alt="tue"
-                  width="30px"
-                  height="30px"
-                />
-                <span>21°</span>
-                <span>15°</span>
-              </li>
-              <li class="dayly-days">
-                <p>Thu</p>
-                <img
-                  src="./assets/images/icon-sunny.webp"
-                  alt="tue"
-                  width="30px"
-                  height="30px"
-                />
-                <span>24°</span>
-                <span>14°</span>
-              </li>
-              <li class="dayly-days">
-                <p>Fri</p>
-                <img
-                  src="./assets/images/icon-partly-cloudy.webp"
-                  alt="tue"
-                  width="30px"
-                  height="30px"
-                />
-                <span>25°</span>
-                <span>13°</span>
-              </li>
-              <li class="dayly-days">
-                <p>Sat</p>
-                <img
-                  src="./assets/images/icon-storm.webp"
-                  alt="tue"
-                  width="30px"
-                  height="30px"
-                />
-                <span>21°</span>
-                <span>15°</span>
-              </li>
-              <li class="dayly-days">
-                <p>Sun</p>
-                <img
-                  src="./assets/images/icon-snow.webp"
-                  alt="tue"
-                  width="30px"
-                  height="30px"
-                />
-                <span>25°</span>
-                <span>16°</span>
-              </li>
-              <li class="dayly-days">
-                <p>Mon</p>
-                <img
-                  src="./assets/images/icon-fog.webp"
-                  alt="tue"
-                  width="30px"
-                  height="30px"
-                />
-                <span>24°</span>
-                <span>15°</span>
-              </li>
-            </ul>
-          </section>
+          <div class="weather-info temperature"></div>
+
+          <div class="stat-card"></div>
         </div>
         <div class="right">
           <h3>Hourly forecast</h3>
@@ -287,5 +171,6 @@
       </div>
     </div>
     <!-- Insert hourly forecast for the selected day here -->
+    <script src="./code.js" type="module"></script>
   </body>
 </html>

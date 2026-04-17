@@ -30,6 +30,7 @@ ul {
 
 span {
   color: white;
+  font-style: italic;
 }
 
 input {
@@ -51,16 +52,19 @@ button {
   padding: 12px 15px 12px 15px;
 }
 
-h1 {
+button:hover {
+  background-color: hsl(248, 70%, 36%);
+}
+
+.text-header{
   text-align: center;
   padding: 15px;
   margin-top: 30px;
   margin-bottom: 30px;
+  font-size: 40px;
 }
 
-h3 {
-  padding: 15px;
-}
+
 
 p {
   font-size: 14px;
@@ -84,6 +88,7 @@ header {
   margin: 20px 10px 10px 10px;
 }
 
+
 .label {
   background-color: var(--primary-card-right);
   padding: 12px 15px 12px 15px;
@@ -92,7 +97,113 @@ header {
   align-items: center;
   gap: 6px;
   width: 80%;
+  width: auto;
 }
+
+/* .search-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+} */
+
+.search-field {
+  /* display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 90%; */
+}
+.search-form{
+   display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 90%;
+}
+
+@media screen and (min-width: 768px) {
+  .search-form{
+    flex-direction: row;
+    justify-content: center;
+    margin: auto;
+    gap: 10px;
+    width: 35%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .search-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+  }
+}
+
+
+
+.weather-left {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.weather-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  font-size: 50px;
+  font-weight: 600;
+  font-style: italic;
+  margin-bottom: 15px;
+}
+
+.weather-info {
+ 
+}
+
+.temperature {
+ display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.weather-card{
+ background-image: url(./assets/images/bg-today-small.svg);
+ width: 100%;
+  border-radius: 20px;
+}
+
+
+@media screen and (min-width: 768px) {
+
+  .weather-card{
+  background-image: url(./assets/images/bg-today-large.svg);
+  }
+}
+
+
+.city{
+  margin-top: 30px;
+  margin-bottom: 12px;
+  padding: 5px;
+}
+
+.date{
+  font-weight: 400;
+}
+
+
+
+.hourly {
+  background-color: var(--primary-card-right);
+  padding: 10px;
+  border-radius: 15px;
+  margin-bottom: 40px;
+}
+
 .units select {
   padding: 8px 12px;
   border-radius: 8px;
@@ -114,38 +225,6 @@ header {
   margin-left: 15px;
   margin-right: 15px;
   margin: 30px;
-}
-
-.search-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.search-field {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  width: 90%;
-}
-
-@media screen and (min-width: 768px) {
-  .search-field {
-    flex-direction: row;
-    /* justify-content: center; */
-    gap: 10px;
-    width: 50%;
-  }
-}
-
-@media screen and (min-width: 768px) {
-  .search-section {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: auto;
-  }
 }
 
 @media screen and (min-width: 768px) {
@@ -190,7 +269,7 @@ header {
   gap: 10px;
 }
 
-.dayly-days {
+.daily-days {
   background-color: var(--primary-background-section);
   border-radius: 10px;
   padding: 15px 15px 15px 15px;
@@ -198,7 +277,7 @@ header {
 
 .text-daily {
   text-align: center;
-  margin-bottom: 10px;
+  /* margin-bottom: 10px; */
 }
 
 .picture-daily {
@@ -210,66 +289,4 @@ header {
     display: flex;
     gap: 10px;
   }
-}
-
-.main-card {
-  background-image: url(./assets/images/bg-today-small.svg);
-  padding: 15px;
-  border-radius: 20px;
-}
-
-@media screen and (min-width: 768px) {
-  .main-card {
-    background-image: url(./assets/images/bg-today-large.svg);
-    padding: 30px;
-    border-radius: 20px;
-    display: flex;
-    justify-content: space-between;
-  }
-}
-
-.weather-info {
-  text-align: center;
-  margin-bottom: 20px;
-  padding: 15px;
-}
-
-.temperature-mobile {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 30px;
-  font-size: 50px;
-  font-weight: 700;
-  font-style: italic;
-}
-
-@media screen and (min-width: 768px) {
-  .temperature-mobile {
-    display: none;
-  }
-}
-
-@media screen and (min-width: 768px) {
-  .temperature {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 55px;
-    font-weight: 600;
-    font-style: italic;
-  }
-}
-
-@media screen and (max-width: 765px) {
-  .temperature {
-    display: none;
-  }
-}
-
-.hourly {
-  background-color: var(--primary-card-right);
-  padding: 10px;
-  border-radius: 15px;
-  margin-bottom: 40px;
 }
