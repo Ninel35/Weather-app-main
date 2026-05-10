@@ -24,27 +24,58 @@
             height=""
           />
         </div>
-        <!-- <label for="select">Units</label> -->
-        <div class="units">
-          <img
-            class="icon-units"
-            src="./assets/images/icon-units.svg"
-            alt="logo"
-            width="15px"
-            height="15px"
-          />
-          <label for="select"></label>
-          <select id="select">
-            <option value="">Units</option>
-            <option value="">Temperature</option>
-            <option value="">Celsius (°C)</option>
-            <option value="">Fahrenheit (°F)</option>
-            <option value="">Wind Speed km/h mph</option>
-            <option value="">Precipitation</option>
-            <option value="">Millimeters (mm)</option>
-            <option value="">Inches (in)</option>
-          </select>
-        </div>
+       
+<div class="container">
+  <!-- hidden checkbox -->
+  <input type="checkbox" id="toggle">
+
+  <!-- label controls checkbox -->
+  <label for="toggle" class="header">
+    
+     <img class="icon-units"
+     src="./assets/images/icon-units.svg"
+     alt="units"
+     width="15px"
+     height="15px"
+     />
+<span>Units</span>
+    <span class="arrow">▼</span>
+  </label>
+
+  <!-- dropdown -->
+  <div class="dropdown">
+    <div class="button">Switch to Imperial</div>
+<div>Temperature</div>
+    <div class="option selected" data-type="temp" data-value="c">
+  Celsius (°C) <span class="check">✔</span>
+</div>
+
+<div class="option" data-type="temp" data-value="f">
+  Fahrenheit (°F)
+</div>
+
+<div>Wind speed</div>
+<div class="option selected" data-type="wind" data-value="kmh">
+  km/h <span class="check">✔</span>
+</div>
+
+<div class="option" data-type="wind" data-value="mph">
+  mph
+</div>
+
+<div>Precipitation</div>
+<div class="option selected" data-type="rain" data-value="mm">
+  Millimeters (mm) <span class="check">✔</span>
+</div>
+
+<div class="option" data-type="rain" data-value="inch">
+  Inches (in)
+</div>
+
+  </div>
+</div>
+
+       
       </header>
 
       <h1 class="text-header">How's the sky looking today?</h1>
@@ -57,11 +88,14 @@
               width="15"
               alt="search"
             />
-            <input
-              class="search-input"
-              type="text"
-              placeholder="Search for place..."
-            />
+            <!-- <div class="search-box"> -->
+              <input
+                class="search-input"
+                type="text"
+                placeholder="Search for place..."
+              />
+                <!-- <ul class="options"></ul> -->
+            <!-- </div> -->
           </label>
           <button type="submit">Search</button>
         </form>
@@ -71,105 +105,22 @@
         <div class="left">
           <div class="weather-info temperature"></div>
 
-          <div class="stat-card"></div>
+          <!-- <div class="stat-card"></div> -->
         </div>
-        <div class="right">
-          <h3>Hourly forecast</h3>
 
-          <select id="select">
-            <option value="">Monday</option>
-            <option value="">Tuesday</option>
-            <option value="">Wednesday</option>
-            <option value="">Thursday</option>
-            <option value="">Friday</option>
-            <option value="">Suturday</option>
-            <option value="">Sunday</option>
-          </select>
-          <ul class="hourly">
-            <li class="card-hourly">
-              <img
-                src="./assets/images/icon-overcast.webp"
-                alt="tue"
-                width="20px"
-                height="20px"
-              />
-              <span>3 PM</span>
-              <span>20°</span>
-            </li>
-            <li class="card-hourly">
-              <img
-                src="./assets/images/icon-partly-cloudy.webp"
-                alt="tue"
-                width="20px"
-                height="20px"
-              />
-              <span>4 PM</span>
-              <span>20°</span>
-            </li>
-            <li class="card-hourly">
-              <img
-                src="./assets/images/icon-sunny.webp"
-                alt="tue"
-                width="20px"
-                height="20px"
-              />
-              <span>5 PM</span>
-              <span>20°</span>
-            </li>
-            <li class="card-hourly">
-              <img
-                src="./assets/images/icon-overcast.webp"
-                alt="tue"
-                width="20px"
-                height="20px"
-              />
-              <span>6 PM</span>
-              <span>19°</span>
-            </li>
-            <li class="card-hourly">
-              <img
-                src="./assets/images/icon-snow.webp"
-                alt="tue"
-                width="20px"
-                height="20px"
-              />
-              <span>7 PM</span>
-              <span>18°</span>
-            </li>
-            <li class="card-hourly">
-              <img
-                src="./assets/images/icon-fog.webp"
-                alt="tue"
-                width="20px"
-                height="20px"
-              />
-              <span>8 PM</span>
-              <span>18°</span>
-            </li>
-            <li class="card-hourly">
-              <img
-                src="./assets/images/icon-snow.webp"
-                alt="tue"
-                width="20px"
-                height="20px"
-              />
-              <span>9 PM</span>
-              <span>17°</span>
-            </li>
-            <li class="card-hourly">
-              <img
-                src="./assets/images/icon-snow.webp"
-                alt="tue"
-                width="20px"
-                height="20px"
-              />
-              <span>10 PM</span>
-              <span>17°</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
+         
+            <div class="hourly">
+              <div class="header">
+                <h3>Hourly forecast</h3>
+                <select class="day-select"></select>
+              </div>
+            
+            <div class="hourly-list"></div>
+          </div>
+
+</div>
+
+
     <!-- Insert hourly forecast for the selected day here -->
     <script src="./code.js" type="module"></script>
   </body>

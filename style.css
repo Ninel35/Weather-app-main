@@ -28,9 +28,11 @@ ul {
   list-style-type: none;
 }
 
+
+
 span {
   color: white;
-  font-style: italic;
+  /* font-style: italic; */
 }
 
 input {
@@ -80,6 +82,7 @@ header {
 .left {
   margin: 25px auto 25px auto;
 }
+
 .app {
   max-width: 1100px;
 }
@@ -100,18 +103,6 @@ header {
   width: auto;
 }
 
-/* .search-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-} */
-
-.search-field {
-  /* display: flex;
-  flex-direction: column;
-  gap: 10px;
-  width: 90%; */
-}
 .search-form{
    display: flex;
   flex-direction: column;
@@ -157,9 +148,7 @@ header {
   margin-bottom: 15px;
 }
 
-.weather-info {
- 
-}
+
 
 .temperature {
  display: flex;
@@ -195,13 +184,28 @@ header {
   font-weight: 400;
 }
 
-
-
 .hourly {
+  margin-top: 20px;
   background-color: var(--primary-card-right);
   padding: 10px;
   border-radius: 15px;
   margin-bottom: 40px;
+}
+
+.day-select{
+padding: 8px;
+background-color: hsl(243, 23%, 30%);
+border-radius: 8px;
+border: none;
+color:  hsl(0, 0%, 100%);
+  }
+
+.header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  margin-bottom: 10px;
 }
 
 .units select {
@@ -209,16 +213,14 @@ header {
   border-radius: 8px;
 }
 
-.stat {
-  padding: 15px;
-  background-color: var(--primary-background-section);
-}
-
-.card-hourly {
-  background-color: var(--primary-card-hourly);
+.hour-card {
+  display: flex;
+  /* justify-content: space-around; */
+  align-items: center;
+  background:var(--primary-card-hourly);
   padding: 10px;
-  margin: 10px;
   border-radius: 10px;
+  margin-bottom: 12px;
 }
 
 .content {
@@ -238,13 +240,24 @@ header {
 .stat-card {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
-  margin: 0;
-  padding: 25px 15px 25px 15px;
+
+  /* padding: 25px 15px 25px 15px; */
+  margin: 35px 15px 25px 15px;
+  width: 100%;
+  height: 95px;
 }
 
 .stat {
+  display: flex;
+  flex-direction: column;
+  justify-content:space-between;
+  align-items:center;
+  padding: 15px;
+  background-color: var(--primary-background-section);
   border-radius: 10px;
+  border-style: solid;
+  border-color:  hsl(243, 23%, 30%);
+  border-width: 0.2px;
 }
 
 @media screen and (min-width: 768px) {
@@ -253,6 +266,10 @@ header {
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
   }
+}
+
+.daily{
+  width: 100%;
 }
 
 @media screen and (min-width: 768px) {
@@ -266,11 +283,15 @@ header {
   margin: 15px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
+
+  /* width: 100%; */
 }
 
 .daily-days {
   background-color: var(--primary-background-section);
+  border-style: solid;
+  border-color:  hsl(243, 23%, 30%);
+  border-width: 0.5px;
   border-radius: 10px;
   padding: 15px 15px 15px 15px;
 }
@@ -290,3 +311,84 @@ header {
     gap: 10px;
   }
 }
+
+
+.container {
+    width: 260px;
+    margin: 50px auto;
+    color: white;
+  }
+
+  /* hide checkbox */
+  #toggle {
+    display: none;
+  }
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #2a2e55;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+
+  .arrow {
+    transition: transform 0.3s;
+  }
+
+  /* dropdown */
+  .dropdown {
+    background: #1c1f3a;
+    border-radius: 12px;
+    padding: 12px;
+    margin-top: 8px;
+    display: none;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+  }
+
+  /* show when checked */
+  #toggle:checked ~ .dropdown {
+    display: block;
+  }
+
+  /* rotate arrow when open */
+  #toggle:checked + label .arrow {
+    transform: rotate(180deg);
+  }
+
+  .button {
+    margin-top: 10px;
+    background: #3a3f70;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+    cursor: pointer;
+  }
+
+  .section-units {
+    margin-top: 15px;
+  }
+
+  .section-title {
+    font-size: 12px;
+    color: #aaa;
+    margin-bottom: 5px;
+  }
+
+  .option {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+
+  .option:hover {
+    background: #2a2e55;
+  }
+
+  .selected {
+    background: #2a2e55;
+  }

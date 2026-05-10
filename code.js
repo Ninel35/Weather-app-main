@@ -1,12 +1,94 @@
 const form = document.querySelector(".search-form");
 
+function prepareHourlyData(data) {
+  return data.hourly.time.map((time, idx) => ({
+    time,
+    date: time.split("T")[0],
+    temp: data.hourly.temperature_2m[idx],
+    code: data.hourly.weather_code[idx],
+  }));
+}
+
+function getDays(hours) {
+  return [...new Set(hours.map((h) => h.date))];
+}
+
+function getHoursForDay(hours, selectedDay) {
+  return hours.filter((h) => h.date === selectedDay);
+}
+
+function getNextHours(hours, selectedDay) {
+  const now = new Date();
+  const today = now.toISOString().split("T")[0];
+
+  if (selectedDay === today) {
+    return hours.filter((h) => new Date(h.time) >= now).slice(0, 8);
+  }
+
+  return hours.slice(0, 8);
+}
+
+function renderHourlySection(data) {
+  const select = document.querySelector(".day-select");
+  const container = document.querySelector(".hourly-list");
+
+  const hours = prepareHourlyData(data);
+  const days = getDays(hours);
+
+  select.innerHTML = days
+    .map((day) => {
+      const label = new Date(day).toLocaleDateString("en-US", {
+        weekday: "long",
+      });
+      return `<option value="${day}">${label}</option>`;
+    })
+    .join("");
+
+  function update() {
+    const selectedDay = select.value;
+
+    const dayHours = getHoursForDay(hours, selectedDay);
+    const nextHours = getNextHours(dayHours, selectedDay);
+
+    container.innerHTML = hourlyMarkup(nextHours);
+  }
+
+  select.addEventListener("change", update);
+
+  update();
+}
+
+function hourlyMarkup(hours) {
+  return hours
+    .map((item) => {
+      const date = new Date(item.time);
+
+      const hour = date.toLocaleTimeString("en-US", {
+        hour: "numeric",
+        hour12: true,
+      });
+
+      const icon = getWeatherIcon(item.code);
+
+      return `
+      
+       <div class="hour-card">
+          <img src="${icon}" width="30"/>
+          <span>${hour}</span>
+          <span>${Math.round(item.temp)}°</span>
+        </div>
+  `;
+    })
+    .join("");
+}
+
 async function getCoordinates(city) {
   const response = await fetch(
     `https://geocoding-api.open-meteo.com/v1/search?name=${city}`,
   );
 
   const data = await response.json();
-  console.log(data);
+  // console.log(data);
   return data.results[0];
 }
 
@@ -33,15 +115,17 @@ async function handlerQuery(evt) {
     );
 
     const data = await response.json();
-    console.log(data);
+    // console.log(data);
     weatherElem.innerHTML = weatherMarkup(data, cityName, country);
+
+    renderHourlySection(data);
   } catch (error) {
     console.error("Error", error);
   }
 }
 
 function getWeatherIcon(code) {
-  console.log(code);
+  // console.log(code);
   if (code === 0) return "./assets/images/icon-sunny.webp";
 
   if (code >= 1 && code <= 3) return "./assets/images/icon-partly-cloudy.webp";
@@ -93,7 +177,7 @@ function weatherMarkup(data, city, country) {
   const iconPath = getWeatherIcon(code);
 
   const date = new Date(Date.parse(data.current.time));
-  console.log(date);
+  // console.log(date);
 
   const weakDay = date.getDay();
 
@@ -174,5 +258,12 @@ function weatherMarkup(data, city, country) {
          ${dailyMarkup(data)}
         </ul>
         </div>
+
+ 
   `;
 }
+
+
+
+
+
