@@ -103,6 +103,8 @@ async function handlerQuery(evt) {
   try {
     const city = input.value;
 
+    localStorage.setItem("city", city);
+
     const location = await getCoordinates(city);
 
     const lat = location.latitude;
@@ -264,6 +266,17 @@ function weatherMarkup(data, city, country) {
 }
 
 
+
+window.addEventListener("load", () => {
+   
+  const savedCity = localStorage.getItem("city");
+
+  if (savedCity) {
+    document.querySelector(".search-input").value = savedCity;
+
+    handlerQuery(new Event("submit"));
+  }
+});
 
 
 
